@@ -14,7 +14,132 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      exams: {
+        Row: {
+          created_at: string
+          date: string
+          id: string
+          max_marks: number
+          obtained_marks: number | null
+          subject: string
+          target_marks: number
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          date: string
+          id?: string
+          max_marks: number
+          obtained_marks?: number | null
+          subject: string
+          target_marks: number
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          date?: string
+          id?: string
+          max_marks?: number
+          obtained_marks?: number | null
+          subject?: string
+          target_marks?: number
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      journal_entries: {
+        Row: {
+          content: string
+          created_at: string
+          id: string
+          mood_name: string | null
+          mood_score: number | null
+          user_id: string
+        }
+        Insert: {
+          content: string
+          created_at?: string
+          id?: string
+          mood_name?: string | null
+          mood_score?: number | null
+          user_id: string
+        }
+        Update: {
+          content?: string
+          created_at?: string
+          id?: string
+          mood_name?: string | null
+          mood_score?: number | null
+          user_id?: string
+        }
+        Relationships: []
+      }
+      notifications: {
+        Row: {
+          created_at: string
+          id: string
+          message: string
+          read_status: boolean | null
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          message: string
+          read_status?: boolean | null
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          message?: string
+          read_status?: boolean | null
+          user_id?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          branch_year: string | null
+          created_at: string
+          email: string | null
+          id: string
+          name: string
+          sos_contact: string | null
+          updated_at: string
+          user_id: string
+          wellness_points: number | null
+        }
+        Insert: {
+          avatar_url?: string | null
+          branch_year?: string | null
+          created_at?: string
+          email?: string | null
+          id?: string
+          name: string
+          sos_contact?: string | null
+          updated_at?: string
+          user_id: string
+          wellness_points?: number | null
+        }
+        Update: {
+          avatar_url?: string | null
+          branch_year?: string | null
+          created_at?: string
+          email?: string | null
+          id?: string
+          name?: string
+          sos_contact?: string | null
+          updated_at?: string
+          user_id?: string
+          wellness_points?: number | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
